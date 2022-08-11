@@ -1,5 +1,5 @@
 {
-    "name": "colorthief",
+    "name": "@pioug/colorthief",
     "version": "2.3.2",
     "author": {
         "name": "Lokesh Dhakar",
@@ -49,6 +49,6 @@
     },
     "dependencies": {
         "get-pixels": "^3.3.2",
-        "quantize": "workspace:quantize"
+        "quantize": "workspace:@pioug/quantize@^1.2.0"
     }
 }
