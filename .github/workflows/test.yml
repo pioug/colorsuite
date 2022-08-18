@@ -1,0 +1,15 @@
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          run_install: true
+          version: latest
+      - run: pnpm --recursive run build
