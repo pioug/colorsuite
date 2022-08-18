@@ -12,17 +12,17 @@
  */
 if (!pv) {
   var pv = {
-    map: function map(array, f) {
+    map: function (array, f) {
       var o = {};
       return f ? array.map(function (d, i) {
         o.index = i;
         return f.call(o, d);
       }) : array.slice();
     },
-    naturalOrder: function naturalOrder(a, b) {
+    naturalOrder: function (a, b) {
       return a < b ? -1 : a > b ? 1 : 0;
     },
-    sum: function sum(array, f) {
+    sum: function (array, f) {
       var o = {};
       return array.reduce(f ? function (p, d, i) {
         o.index = i;
@@ -31,7 +31,7 @@ if (!pv) {
         return p + d;
       }, 0);
     },
-    max: function max(array, f) {
+    max: function (array, f) {
       return Math.max.apply(null, f ? pv.map(array, f) : array);
     }
   };
@@ -82,26 +82,26 @@ var MMCQ = function () {
     }
 
     return {
-      push: function push(o) {
+      push: function (o) {
         contents.push(o);
         sorted = false;
       },
-      peek: function peek(index) {
+      peek: function (index) {
         if (!sorted) sort();
         if (index === undefined) index = contents.length - 1;
         return contents[index];
       },
-      pop: function pop() {
+      pop: function () {
         if (!sorted) sort();
         return contents.pop();
       },
-      size: function size() {
+      size: function () {
         return contents.length;
       },
-      map: function map(f) {
+      map: function (f) {
         return contents.map(f);
       },
-      debug: function debug() {
+      debug: function () {
         if (!sorted) sort();
         return contents;
       }
@@ -121,7 +121,7 @@ var MMCQ = function () {
   }
 
   VBox.prototype = {
-    volume: function volume(force) {
+    volume: function (force) {
       var vbox = this;
 
       if (!vbox._volume || force) {
@@ -130,7 +130,7 @@ var MMCQ = function () {
 
       return vbox._volume;
     },
-    count: function count(force) {
+    count: function (force) {
       var vbox = this,
           histo = vbox.histo;
 
@@ -156,11 +156,11 @@ var MMCQ = function () {
 
       return vbox._count;
     },
-    copy: function copy() {
+    copy: function () {
       var vbox = this;
       return new VBox(vbox.r1, vbox.r2, vbox.g1, vbox.g2, vbox.b1, vbox.b2, vbox.histo);
     },
-    avg: function avg(force) {
+    avg: function (force) {
       var vbox = this,
           histo = vbox.histo;
 
@@ -199,7 +199,7 @@ var MMCQ = function () {
 
       return vbox._avg;
     },
-    contains: function contains(pixel) {
+    contains: function (pixel) {
       var vbox = this,
           rval = pixel[0] >> rshift;
       gval = pixel[1] >> rshift;
@@ -215,21 +215,21 @@ var MMCQ = function () {
   }
 
   CMap.prototype = {
-    push: function push(vbox) {
+    push: function (vbox) {
       this.vboxes.push({
         vbox: vbox,
         color: vbox.avg()
       });
     },
-    palette: function palette() {
+    palette: function () {
       return this.vboxes.map(function (vb) {
         return vb.color;
       });
     },
-    size: function size() {
+    size: function () {
       return this.vboxes.size();
     },
-    map: function map(color) {
+    map: function (color) {
       var vboxes = this.vboxes;
 
       for (var i = 0; i < vboxes.size(); i++) {
@@ -240,7 +240,7 @@ var MMCQ = function () {
 
       return this.nearest(color);
     },
-    nearest: function nearest(color) {
+    nearest: function (color) {
       var vboxes = this.vboxes,
           d1,
           d2,
@@ -257,7 +257,7 @@ var MMCQ = function () {
 
       return pColor;
     },
-    forcebw: function forcebw() {
+    forcebw: function () {
       // XXX: won't  work yet
       var vboxes = this.vboxes;
       vboxes.sort(function (a, b) {
@@ -402,15 +402,11 @@ var MMCQ = function () {
           right = vbox[dim2] - i;
           if (left <= right) d2 = Math.min(vbox[dim2] - 1, ~~(i + right / 2));else d2 = Math.max(vbox[dim1], ~~(i - 1 - left / 2)); // avoid 0-count boxes
 
-          while (!partialsum[d2]) {
-            d2++;
-          }
+          while (!partialsum[d2]) d2++;
 
           count2 = lookaheadsum[d2];
 
-          while (!count2 && partialsum[d2 - 1]) {
-            count2 = lookaheadsum[--d2];
-          } // set dimensions
+          while (!count2 && partialsum[d2 - 1]) count2 = lookaheadsum[--d2]; // set dimensions
 
 
           vbox1[dim2] = d2;
@@ -518,4 +514,4 @@ var MMCQ = function () {
 
 var quantize = MMCQ.quantize;
 
-module.exports = quantize;
+export { quantize as default };
