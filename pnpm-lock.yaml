@@ -12,8 +12,6 @@ importers:
 
   colorthief:
     specifiers:
-      '@node-minify/core': ^4.0.5
-      '@node-minify/uglify-es': ^4.0.5
       chai: ^4.2.0
       chai-as-promised: ^7.1.1
       cypress: ^3.4.0
@@ -27,8 +25,6 @@ importers:
       get-pixels: link:../get-pixels
       quantize: link:../quantize
     devDependencies:
-      '@node-minify/core': 4.1.2
-      '@node-minify/uglify-es': 4.1.2
       chai: 4.3.6
       chai-as-promised: 7.1.1_chai@4.3.6
       cypress: 3.8.3
@@ -1453,30 +1449,6 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
-  /@node-minify/core/4.1.2:
-    resolution: {integrity: sha512-ke3PT/KXfujIqOaY1wefn8BE94uoaTKSjRk6qj2eowwP9ofhopsmJOmFtoDnEIcX7GMANCP/VGbyj959CrTcvw==}
-    engines: {node: '>=6.0.0'}
-    dependencies:
-      '@node-minify/utils': 4.1.2
-      glob: 7.1.4
-      mkdirp: 0.5.1
-    dev: true
-
-  /@node-minify/uglify-es/4.1.2:
-    resolution: {integrity: sha512-Y1zFPC1zbWWJXDg/v9zctiMIvuLAYwkJ0tGWegB3eEG68+/LKCM8ESPfkrDcnJq1pGpDXijQuDLnUSB2GaBthw==}
-    engines: {node: '>=6.0.0'}
-    dependencies:
-      '@node-minify/utils': 4.1.2
-      uglify-es: 3.3.9
-    dev: true
-
-  /@node-minify/utils/4.1.2:
-    resolution: {integrity: sha512-ary5uJEZOt35lhjg+64rFc5uy1CSiQyosUzPpHtchpOqGVYO0Yj2AMvEIgGGK1nDuHq7j6sfzrZBAOFXmIh2oQ==}
-    engines: {node: '>=6.0.0'}
-    dependencies:
-      gzip-size: 5.1.1
-    dev: true
-
   /@nodelib/fs.scandir/2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
     engines: {node: '>= 8'}
@@ -2500,10 +2472,6 @@ packages:
     engines: {node: '>= 0.8'}
     dependencies:
       delayed-stream: 1.0.0
-
-  /commander/2.13.0:
-    resolution: {integrity: sha512-MVuS359B+YzaWqjCL/c+22gfryv+mCBPHAv3zyVI2GN8EY6IRP8VwtasXn8jyyhvvq84R4ImN1OKRtcbIasjYA==}
-    dev: true
 
   /commander/2.15.1:
     resolution: {integrity: sha512-VlfT9F3V0v+jr4yxPc5gg9s62/fIVWsd2Bk2iD435um1NlGMYdVCq+MjcXnhYq2icNOizHr1kK+5TI6H0Hy0ag==}
@@ -3975,17 +3943,6 @@ packages:
       path-is-absolute: 1.0.1
     dev: true
 
-  /glob/7.1.4:
-    resolution: {integrity: sha512-hkLPepehmnKk41pUGm3sYxoFs/umurYfYJCerbXEyFIWcAzvpipAgVkBqqT9RBKMGjnq6kMuyYwha6csxbiM1A==}
-    dependencies:
-      fs.realpath: 1.0.0
-      inflight: 1.0.6
-      inherits: 2.0.4
-      minimatch: 3.1.2
-      once: 1.4.0
-      path-is-absolute: 1.0.1
-    dev: true
-
   /glob/7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
     dependencies:
@@ -4053,14 +4010,6 @@ packages:
     engines: {node: '>=0.12.0'}
     dependencies:
       duplexer: 0.1.2
-    dev: true
-
-  /gzip-size/5.1.1:
-    resolution: {integrity: sha512-FNHi6mmoHvs1mxZAds4PpdCS6QG8B4C1krxJsMutgxl5t3+GlRTzzI3NEkifXx2pVsOvJdOGSmIgDhQ55FwdPA==}
-    engines: {node: '>=6'}
-    dependencies:
-      duplexer: 0.1.2
-      pify: 4.0.1
     dev: true
 
   /gzip-size/6.0.0:
@@ -5975,11 +5924,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /pify/4.0.1:
-    resolution: {integrity: sha512-uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g==}
-    engines: {node: '>=6'}
-    dev: true
-
   /pify/5.0.0:
     resolution: {integrity: sha512-eW/gHNMlxdSP6dmG6uJip6FXN0EQBwm2clYYd8Wul42Cwu/DK8HEftzsapcNdYe2MfLiIwZqsDk2RDEsTE79hA==}
     engines: {node: '>=10'}
@@ -7827,16 +7771,6 @@ packages:
     resolution: {integrity: sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ==}
     engines: {node: '>=4.2.0'}
     hasBin: true
-    dev: true
-
-  /uglify-es/3.3.9:
-    resolution: {integrity: sha512-r+MU0rfv4L/0eeW3xZrd16t4NZfK8Ld4SWVglYBb7ez5uXFWHuVRs6xCTrf1yirs9a4j4Y27nn7SRfO6v67XsQ==}
-    engines: {node: '>=0.8.0'}
-    deprecated: support for ECMAScript is superseded by `uglify-js` as of v3.13.0
-    hasBin: true
-    dependencies:
-      commander: 2.13.0
-      source-map: 0.6.1
     dev: true
 
   /uglify-js/2.2.5:
