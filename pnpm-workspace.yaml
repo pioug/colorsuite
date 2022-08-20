@@ -1,4 +1,4 @@
 packages:
-  - 'color-thief'
+  - 'colorthief'
   - 'get-pixels'
   - 'quantize'
