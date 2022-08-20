@@ -10,7 +10,7 @@ var images = [
 ];
 
 // Render example images
-var examplesHTML = Mustache.to_html(
+var examplesHTML = Mustache.render(
   document.getElementById("image-tpl").innerHTML,
   images
 );
@@ -35,7 +35,7 @@ const showColorsForImage = function (image, section) {
   let start = Date.now();
   let result = colorThief.getColor(image);
   let elapsedTime = Date.now() - start;
-  const colorHTML = Mustache.to_html(
+  const colorHTML = Mustache.render(
     document.getElementById("color-tpl").innerHTML,
     {
       color: result,
@@ -51,7 +51,7 @@ const showColorsForImage = function (image, section) {
     let start = Date.now();
     let result = colorThief.getPalette(image, count);
     let elapsedTime = Date.now() - start;
-    paletteHTML += Mustache.to_html(
+    paletteHTML += Mustache.render(
       document.getElementById("palette-tpl").innerHTML,
       {
         count,
