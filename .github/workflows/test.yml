@@ -14,3 +14,4 @@ jobs:
           version: latest
       - run: pnpm --recursive run build
       - run: pnpx prettier . -c
+      - run: pnpx eslint .
