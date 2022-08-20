@@ -195,7 +195,7 @@ test("get-url jpg img", function (t) {
       t.end();
       return;
     }
-    test_image(t, pixels);
+    test_image(t, pixels, typeof window === "undefined" ? 3 : 4);
     t.end();
   });
 });
