@@ -2,6 +2,12 @@ lockfileVersion: 5.4
 
 importers:
 
+  .:
+    specifiers:
+      prettier: ^2.7.1
+    dependencies:
+      prettier: 2.7.1
+
   colorthief:
     specifiers:
       '@node-minify/core': ^4.0.5
@@ -6286,6 +6292,12 @@ packages:
     resolution: {integrity: sha512-s/46sYeylUfHNjI+sA/78FAHlmIuKqI9wNnzEOGehAlUUYeObv5C2mOinXBjyUyWmJ2SfcS2/ydApH4hTF4WXQ==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /prettier/2.7.1:
+    resolution: {integrity: sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
+    dev: false
 
   /pretty-bytes/0.1.2:
     resolution: {integrity: sha512-TYOKOXttAHbRtQZJGClkQml5sKaM12gGe7xW/SNJkBVs2Jrg1RGTa8a+oM75daQEqKFrFk4MTmvVsgt7uCCc+Q==}
