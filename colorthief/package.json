@@ -1,6 +1,6 @@
 {
   "name": "@pioug/colorthief",
-  "version": "2.3.2",
+  "version": "3.0.0",
   "author": {
     "name": "Lokesh Dhakar",
     "email": "lokesh.dhakar@gmail.com",
@@ -45,7 +45,7 @@
     "mustache": "^4.2.0"
   },
   "dependencies": {
-    "get-pixels": "workspace:@pioug/get-pixels@^3.3.2",
+    "get-pixels": "workspace:@pioug/get-pixels@^4.0.0",
     "quantize": "workspace:@pioug/quantize@^1.2.0"
   }
 }

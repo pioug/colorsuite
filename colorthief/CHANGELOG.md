@@ -1,4 +1,8 @@
-## <small>1.2.0 (2022-08-20)</small>
+## <small>3.0.0 (2022-09-14)</small>
+
+- Update @pioug/get-pixels@4.0.0
+
+## <small>2.3.2 (2022-08-20)</small>
 
 - Fork [lokesh/color-thief](https://github.com/lokesh/color-thief)
 - Update microbundle (fix installation on recent Node)
