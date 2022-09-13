@@ -1,6 +1,6 @@
 {
   "name": "@pioug/get-pixels",
-  "version": "3.3.3",
+  "version": "4.0.0",
   "description": "Reads the pixels of an image as an ndarray",
   "main": "node-pixels.js",
   "directories": {
