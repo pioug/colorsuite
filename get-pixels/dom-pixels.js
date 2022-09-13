@@ -5,7 +5,6 @@ var ndarray = require("ndarray");
 var GifReader = require("omggif").GifReader;
 var pack = require("ndarray-pack");
 var through = require("through");
-var parseDataURI = require("data-uri-to-buffer");
 
 function defaultImage(url, cb) {
   var img = new Image();
@@ -93,32 +92,17 @@ function httpGif(url, cb) {
   xhr.send();
 }
 
-function copyBuffer(buffer) {
-  if (buffer[0] === undefined) {
-    var n = buffer.length;
-    var result = new Uint8Array(n);
-    for (var i = 0; i < n; ++i) {
-      result[i] = buffer.get(i);
-    }
-    return result;
-  } else {
-    return new Uint8Array(buffer);
-  }
-}
-
 function dataGif(url, cb) {
-  process.nextTick(function () {
-    try {
-      var buffer = parseDataURI(url);
-      if (buffer) {
-        handleGif(copyBuffer(buffer), cb);
-      } else {
-        cb(new Error("Error parsing data URI"));
-      }
-    } catch (err) {
+  return fetch(url)
+    .then(function (response) {
+      return response.arrayBuffer();
+    })
+    .then(function (arrayBuffer) {
+      return handleGif(new Uint8Array(arrayBuffer), cb);
+    })
+    .catch(function (err) {
       cb(err);
-    }
-  });
+    });
 }
 
 module.exports = function getPixels(url, type, cb) {
