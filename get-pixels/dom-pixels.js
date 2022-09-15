@@ -71,28 +71,7 @@ function handleGif(data, cb) {
   }
 }
 
-function httpGif(url, cb) {
-  var xhr = new XMLHttpRequest();
-  xhr.open("GET", url, true);
-  xhr.responseType = "arraybuffer";
-  if (xhr.overrideMimeType) {
-    xhr.overrideMimeType("application/binary");
-  }
-  xhr.onerror = function (err) {
-    cb(err);
-  };
-  xhr.onload = function () {
-    if (xhr.readyState !== 4) {
-      return;
-    }
-    var data = new Uint8Array(xhr.response);
-    handleGif(data, cb);
-    return;
-  };
-  xhr.send();
-}
-
-function dataGif(url, cb) {
+function fetchGif(url, cb) {
   return fetch(url)
     .then(function (response) {
       return response.arrayBuffer();
@@ -113,14 +92,14 @@ module.exports = function getPixels(url, type, cb) {
   var ext = path.extname(url);
   switch (type || ext.toUpperCase()) {
     case ".GIF":
-      httpGif(url, cb);
+      fetchGif(url, cb);
       break;
     default:
       if (Buffer.isBuffer(url)) {
         url = "data:" + type + ";base64," + url.toString("base64");
       }
       if (url.indexOf("data:image/gif;") === 0) {
-        dataGif(url, cb);
+        fetchGif(url, cb);
       } else {
         defaultImage(url, cb);
       }
