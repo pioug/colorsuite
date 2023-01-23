@@ -3,8 +3,6 @@
 var path = require("path");
 var ndarray = require("ndarray");
 var GifReader = require("omggif").GifReader;
-var pack = require("ndarray-pack");
-var through = require("through");
 
 function defaultImage(url, cb) {
   var img = new Image();
@@ -58,9 +56,9 @@ function handleGif(data, cb) {
     }
     cb(null, result.transpose(0, 2, 1));
   } else {
-    var nshape = [reader.height, reader.width, 4];
-    var ndata = new Uint8Array(nshape[0] * nshape[1] * nshape[2]);
-    var result = ndarray(ndata, nshape);
+    nshape = [reader.height, reader.width, 4];
+    ndata = new Uint8Array(nshape[0] * nshape[1] * nshape[2]);
+    result = ndarray(ndata, nshape);
     try {
       reader.decodeAndBlitFrameRGBA(0, ndata);
     } catch (err) {

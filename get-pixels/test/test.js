@@ -2,7 +2,6 @@
 var test = require("tape");
 
 var fs = require("fs");
-var path = require("path");
 var ndarray = require("ndarray");
 var getPixels =
   typeof window === "undefined"
@@ -145,7 +144,7 @@ test("get-pixels-bmp", function(t) {
 test("data url", function (t) {
   var url =
     "data:image/gif;base64,R0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGolfO0o/XBs/fNwfjZ0frl3/zy7////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAABAALAAAAAAQABAAAAVVICSOZGlCQAosJ6mu7fiyZeKqNKToQGDsM8hBADgUXoGAiqhSvp5QAnQKGIgUhwFUYLCVDFCrKUE1lBavAViFIDlTImbKC5Gm2hB0SlBCBMQiB0UjIQA7";
-  getPixels(url, function (err, data) {
+  getPixels(url, function (err) {
     if (err) {
       console.log(err);
       t.error("failed to read data url");
