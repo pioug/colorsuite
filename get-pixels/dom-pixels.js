@@ -87,7 +87,7 @@ module.exports = function getPixels(url, type, cb) {
     cb = type;
     type = "";
   }
-  var ext = path.extname(url);
+  var ext = Buffer.isBuffer(url) ? "" : path.extname(url);
   switch (type || ext.toUpperCase()) {
     case ".GIF":
       fetchGif(url, cb);
