@@ -16,5 +16,10 @@
     "no-self-assign": "warn",
     "no-undef": "warn",
     "no-unused-vars": "warn"
+  },
+  "globals": {
+    "ColorThief": true,
+    "cy": true,
+    "Mustache": true
   }
 }
