@@ -13,6 +13,6 @@ jobs:
           run_install: true
           version: latest
       - run: pnpm --recursive run build
-      - run: pnpx prettier . -c
-      - run: pnpx eslint .
+      - run: pnpm  prettier . -c
+      - run: pnpm eslint .
       - run: pnpm run --recursive test
