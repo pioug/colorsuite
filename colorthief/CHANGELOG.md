@@ -1,3 +1,7 @@
+## <small>4.0.0 (2025-10-28)</small>
+
+- Update get-pixels@5.0.0
+
 ## <small>3.0.1 (2022-09-14)</small>
 
 - Fix published package
