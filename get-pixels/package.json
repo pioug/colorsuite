@@ -7,19 +7,19 @@
     "test": "test"
   },
   "dependencies": {
-    "jpeg-js": "^0.4.1",
-    "mime-types": "^2.0.1",
-    "ndarray": "^1.0.13",
-    "ndarray-pack": "^1.1.1",
+    "jpeg-js": "^0.4.4",
+    "mime-types": "^3.0.1",
+    "ndarray": "^1.0.19",
+    "ndarray-pack": "^1.2.1",
     "node-bitmap": "0.0.1",
-    "omggif": "^1.0.5",
-    "pngjs": "^6.0.0"
+    "omggif": "^1.0.10",
+    "pngjs": "^7.0.0"
   },
   "devDependencies": {
     "beefy": "^2.1.8",
     "brfs": "^2.0.2",
-    "browserify": "^17.0.0",
-    "tape": "^5.6.3"
+    "browserify": "^17.0.1",
+    "tape": "^5.9.0"
   },
   "scripts": {
     "test": "tape test/*.js",

@@ -49,26 +49,26 @@ importers:
   get-pixels:
     dependencies:
       jpeg-js:
-        specifier: ^0.4.1
+        specifier: ^0.4.4
         version: 0.4.4
       mime-types:
-        specifier: ^2.0.1
-        version: 2.1.35
+        specifier: ^3.0.1
+        version: 3.0.1
       ndarray:
-        specifier: ^1.0.13
+        specifier: ^1.0.19
         version: 1.0.19
       ndarray-pack:
-        specifier: ^1.1.1
+        specifier: ^1.2.1
         version: 1.2.1
       node-bitmap:
         specifier: 0.0.1
         version: 0.0.1
       omggif:
-        specifier: ^1.0.5
+        specifier: ^1.0.10
         version: 1.0.10
       pngjs:
-        specifier: ^6.0.0
-        version: 6.0.0
+        specifier: ^7.0.0
+        version: 7.0.0
     devDependencies:
       beefy:
         specifier: ^2.1.8
@@ -77,10 +77,10 @@ importers:
         specifier: ^2.0.2
         version: 2.0.2
       browserify:
-        specifier: ^17.0.0
+        specifier: ^17.0.1
         version: 17.0.1
       tape:
-        specifier: ^5.6.3
+        specifier: ^5.9.0
         version: 5.9.0
 
   quantize:
@@ -2757,8 +2757,16 @@ packages:
     resolution: {integrity: sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg==, tarball: https://registry.npmjs.org/mime-db/-/mime-db-1.52.0.tgz}
     engines: {node: '>= 0.6'}
 
+  mime-db@1.54.0:
+    resolution: {integrity: sha512-aU5EJuIN2WDemCcAp2vFBfp/m4EAhWJnUNSSw0ixs7/kXbd6Pg64EmwJkNdFhB8aWt1sH2CTXrLxo/iAGV3oPQ==, tarball: https://registry.npmjs.org/mime-db/-/mime-db-1.54.0.tgz}
+    engines: {node: '>= 0.6'}
+
   mime-types@2.1.35:
     resolution: {integrity: sha512-ZDY+bPm5zTTF+YpCrAU9nK0UgICYPT0QtT1NZWFv4s++TNkcgVaT0g6+4R2uI4MjQjzysHB1zxuWL50hzaeXiw==, tarball: https://registry.npmjs.org/mime-types/-/mime-types-2.1.35.tgz}
+    engines: {node: '>= 0.6'}
+
+  mime-types@3.0.1:
+    resolution: {integrity: sha512-xRc4oEhT6eaBpU1XF7AjpOFD+xQmXNB5OVKwp4tqCuBpHLS/ZbBDrc07mYTDqVMg6PfxUjjNp85O6Cd2Z/5HWA==, tarball: https://registry.npmjs.org/mime-types/-/mime-types-3.0.1.tgz}
     engines: {node: '>= 0.6'}
 
   mime@1.2.11:
@@ -3092,9 +3100,9 @@ packages:
     resolution: {integrity: sha512-HRDzbaKjC+AOWVXxAU/x54COGeIv9eb+6CkDSQoNTt4XyWoIJvuPsXizxu/Fr23EiekbtZwmh1IcIG/l/a10GQ==, tarball: https://registry.npmjs.org/pkg-dir/-/pkg-dir-4.2.0.tgz}
     engines: {node: '>=8'}
 
-  pngjs@6.0.0:
-    resolution: {integrity: sha512-TRzzuFRRmEoSW/p1KVAmiOgPco2Irlah+bGFCeNfJXxxYGwSw7YwAOAcd7X28K/m5bjBWKsC29KyoMfHbypayg==, tarball: https://registry.npmjs.org/pngjs/-/pngjs-6.0.0.tgz}
-    engines: {node: '>=12.13.0'}
+  pngjs@7.0.0:
+    resolution: {integrity: sha512-LKWqWJRhstyYo9pGvgor/ivk2w94eSjE3RGVuzLGlr3NmD8bf7RcYGze1mNdEHRP6TRP6rMuDHk5t44hnTRyow==, tarball: https://registry.npmjs.org/pngjs/-/pngjs-7.0.0.tgz}
+    engines: {node: '>=14.19.0'}
 
   portfinder@0.2.1:
     resolution: {integrity: sha512-U7dHe7mfMMP5cIwbqBHh/likunxAEiBsQLiThUWjyeRK6/C3um2uk+VGiekUW8q3h+s793gdNfagCM3aaXMeOg==, tarball: https://registry.npmjs.org/portfinder/-/portfinder-0.2.1.tgz}
@@ -7572,9 +7580,15 @@ snapshots:
 
   mime-db@1.52.0: {}
 
+  mime-db@1.54.0: {}
+
   mime-types@2.1.35:
     dependencies:
       mime-db: 1.52.0
+
+  mime-types@3.0.1:
+    dependencies:
+      mime-db: 1.54.0
 
   mime@1.2.11: {}
 
@@ -7924,7 +7938,7 @@ snapshots:
     dependencies:
       find-up: 4.1.0
 
-  pngjs@6.0.0: {}
+  pngjs@7.0.0: {}
 
   portfinder@0.2.1:
     dependencies:
