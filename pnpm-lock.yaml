@@ -18,7 +18,7 @@ importers:
   colorthief:
     dependencies:
       get-pixels:
-        specifier: workspace:@pioug/get-pixels@^4.0.0
+        specifier: workspace:@pioug/get-pixels@^5.0.0
         version: link:../get-pixels
       quantize:
         specifier: workspace:@pioug/quantize@^1.2.0
